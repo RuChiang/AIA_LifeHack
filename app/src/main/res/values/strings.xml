@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">LifeHack</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">AIA Vibe</string>
+    <string name="sleep_analysis">Sleep Analysis</string>
+    <string name="current_heartbeat">Current Heartbeat</string>
+    <string name="tone">Mindfulness</string>
+    <string name="dashboard">Dashboard</string>
+
 </resources>
