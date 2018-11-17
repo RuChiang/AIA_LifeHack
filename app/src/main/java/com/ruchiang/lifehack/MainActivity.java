@@ -1,56 +1,79 @@
 package com.ruchiang.lifehack;
 
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+
+
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+    BottomNavigationView bottomNavigationView;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.mindfulness_report:
+                    fragment = new MindfulnessReport();
+//                    Toast.makeText(getApplicationContext(), "mindfulness report", Toast.LENGTH_LONG).show();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.track_mindfulness:
+                    fragment = new TrackMindfulness();
+//                    Toast.makeText(getApplicationContext(), "track mindfulness report", Toast.LENGTH_LONG).show();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.sleep_analysis:
+                    fragment = new SleepAnalysis();
+//                    Toast.makeText(getApplicationContext(), "sleep analysis", Toast.LENGTH_LONG).show();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.dashboard:
+                    fragment = new DashBoard();
+//                    Toast.makeText(getApplicationContext(), "dashboard", Toast.LENGTH_LONG).show();
+                    loadFragment(fragment);
+                    return true;
+            }
+            return false;
+        }
+
+    };
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Fragment fragment = new DashBoard();
+        loadFragment(fragment);
 
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
 
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        MenuItem item = menu.findItem(R.id.dashboard);
-        item.setVisible(false);
-        return true;
+
+
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.sleep_analysis:
-                intent = new Intent(getApplicationContext(), SleepAnalysis.class);
-                startActivity(intent);
-                break;
-            case R.id.current_heartbeat:
-                intent = new Intent(getApplicationContext(), Heartbeat.class);
-                startActivity(intent);
-                break;
-            case R.id.mindfulness:
-                intent = new Intent(getApplicationContext(), Mindfulness.class);
-                startActivity(intent);
-                break;
-        }
-        return false;
-    }
+
+
 }

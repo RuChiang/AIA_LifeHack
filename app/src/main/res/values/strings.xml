@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">AIA Vibe</string>
     <string name="sleep_analysis">Sleep Analysis</string>
-    <string name="current_heartbeat">Current Heartbeat</string>
-    <string name="tone">Mindfulness</string>
+    <string name="track_mindfulness">Track Mindfulness</string>
+    <string name="mindfulness_report">Report</string>
     <string name="dashboard">Dashboard</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

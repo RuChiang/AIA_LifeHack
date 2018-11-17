@@ -1,23 +1,19 @@
 package com.ruchiang.lifehack;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SleepAnalysis extends Fragment {
+public class MindfulnessReport extends Fragment {
 
-    private static final String TAG = "SleepAnalysisFrag";
+    private static final String TAG = "HeartbeatFrag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_sleep_analysis, container, false);
+        return inflater.inflate(R.layout.activity_report_mindfulness, container, false);
     }
 
 }

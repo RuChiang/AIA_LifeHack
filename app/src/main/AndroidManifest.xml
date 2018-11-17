@@ -23,8 +23,8 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SleepAnalysis" />
-        <activity android:name=".Heartbeat" />
-        <activity android:name=".Mindfulness"></activity>
+        <activity android:name=".MindfulnessReport" />
+        <activity android:name=".TrackMindfulness"></activity>
     </application>
 
 </manifest>
