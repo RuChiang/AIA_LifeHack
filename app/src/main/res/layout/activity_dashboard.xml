@@ -4,8 +4,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ruchiang.lifehack.DashBoard"
-    android:background="@drawable/dashboard">
+    android:background="@drawable/dashboard_green">
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:id="@+id/stress_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="120dp"
+        android:text="50"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="90sp" />
+
+    <TextView
+        android:id="@+id/heartbeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="220dp"
+        android:paddingTop="405dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="220dp"
+        android:paddingTop="455dp"
+        android:text="TextView"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sleep_quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="220dp"
+        android:paddingTop="505dp"
+        android:text="TextView"
+        android:textStyle="bold" />
 </FrameLayout>
