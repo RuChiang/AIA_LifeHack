@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="220dp"
-        android:paddingTop="455dp"
+        android:paddingTop="460dp"
         android:text="TextView"
         android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="220dp"
-        android:paddingTop="505dp"
+        android:paddingTop="520dp"
         android:text="TextView"
         android:textStyle="bold" />
 </FrameLayout>

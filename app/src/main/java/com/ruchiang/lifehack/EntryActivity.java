@@ -19,7 +19,7 @@ public class EntryActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 500);
+        }, 2000);
     }
 
 
